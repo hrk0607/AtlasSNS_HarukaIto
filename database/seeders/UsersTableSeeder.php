@@ -4,6 +4,8 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 
 class UsersTableSeeder extends Seeder
 {
@@ -16,20 +18,20 @@ class UsersTableSeeder extends Seeder
     {
         //
         DB::table('users')->insert([
-            ['name' => 'Atlas一郎',
-            'mail' => '111@atlas.com',
+            ['username' => 'Atlas一郎',
+            'email' => '111@atlas.com',
             'password' => bcrypt('atlas1')],
-            ['name' => 'Atlas二郎',
-            'mail' => '222@atlas.com',
+            ['username' => 'Atlas二郎',
+            'email' => '222@atlas.com',
             'password' => bcrypt('atlas2')],
-            ['name' => 'Atlas三郎',
-            'mail' => '333@atlas.com',
+            ['username' => 'Atlas三郎',
+            'email' => '333@atlas.com',
             'password' => bcrypt('atlas3')],
-            ['name' => 'Atlas四郎',
-            'mail' => '444@atlas.com',
+            ['username' => 'Atlas四郎',
+            'email' => '444@atlas.com',
             'password' => bcrypt('atlas4')],
-            ['name' => 'Atlas五郎',
-            'mail' => '555@atlas.com',
+            ['username' => 'Atlas五郎',
+            'email' => '555@atlas.com',
             'password' => bcrypt('atlas5')]
         ]);
     }
