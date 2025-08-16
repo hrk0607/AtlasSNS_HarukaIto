@@ -15,6 +15,7 @@ use Illuminate\View\View;
 
 class RegisteredUserController extends Controller
 {
+
     /**
      * Display the registration view.
      */
@@ -30,6 +31,13 @@ class RegisteredUserController extends Controller
      */
     public function store(Request $request): RedirectResponse
     {
+
+        $validated = $request->validate([
+            'username' => 'required|min:2|max:12',
+            'email' => 'required|min:5|max:40|unique:users|email',
+            'password' => 'required|alpha_num|min:8|max:20|confirmed',
+        ]);
+
         User::create([
             'username' => $request->username,
             'email' => $request->email,
