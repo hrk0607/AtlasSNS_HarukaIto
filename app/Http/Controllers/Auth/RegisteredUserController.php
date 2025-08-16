@@ -34,16 +34,21 @@ class RegisteredUserController extends Controller
 
         $validated = $request->validate([
             'username' => 'required|min:2|max:12',
-            'email' => 'required|min:5|max:40|unique:users|email',
+            'email' => 'required|min:5|max:40|unique:email|email',
             'password' => 'required|alpha_num|min:8|max:20|confirmed',
         ]);
 
+        $username = $request->input('username');
+        $email = $request->input('email');
+        $password = $request->input('password');
+
         User::create([
-            'username' => $request->username,
-            'email' => $request->email,
-            'password' => Hash::make($request->password),
+            'username' => $username,
+            'email' => $email,
+            'password' => bcrypt($password),
         ]);
 
+        $request->session()->put('username',$username);
         return redirect('added');
     }
 
@@ -51,4 +56,5 @@ class RegisteredUserController extends Controller
     {
         return view('auth.added');
     }
+
 }

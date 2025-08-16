@@ -29,6 +29,8 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
+        $out_put = session()->get('username');
+
         return redirect()->intended('top');
     }
 
