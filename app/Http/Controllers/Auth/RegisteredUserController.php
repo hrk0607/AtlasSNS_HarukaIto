@@ -34,7 +34,7 @@ class RegisteredUserController extends Controller
 
         $validated = $request->validate([
             'username' => 'required|min:2|max:12',
-            'email' => 'required|min:5|max:40|unique:email|email',
+            'email' => 'required|min:5|max:40|unique:users|email',
             'password' => 'required|alpha_num|min:8|max:20|confirmed',
         ]);
 
