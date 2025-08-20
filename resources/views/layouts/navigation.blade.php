@@ -2,7 +2,7 @@
             <h1><a><img src="images/atlas.png"></a></h1>
             <div id="">
                 <div id="">
-                    <p>〇〇さん</p>
+                    <p>{{ session ('username') }}さん</p>
                 </div>
                 <ul>
                     <li><a href="">ホーム</a></li>

@@ -20,6 +20,14 @@ use Illuminate\Support\Facades\Route;
 
 require __DIR__ . '/auth.php';
 
+Route::group(['middleware' => 'auth'], function(){
+    Route::post('top', 'PostsController@index');
+    Route::post('profile', 'ProfileController@profile');
+    Route::post('search', 'UsersController@index');
+    Route::post('follow-list', 'PostsController@index');
+    Route::post('follower-list', 'PostsController@index');
+});
+
 Route::get('top', [PostsController::class, 'index']);
 
 Route::get('profile', [ProfileController::class, 'profile']);

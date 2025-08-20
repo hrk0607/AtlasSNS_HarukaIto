@@ -12,10 +12,25 @@ class Authenticate extends Middleware
      * @param  \Illuminate\Http\Request  $request
      * @return string|null
      */
-    protected function redirectTo($request)
+    public function __construct()
     {
-        if (! $request->expectsJson()) {
-            return route('login');
-        }
+        $this->middleware('guest')->except('logout');
     }
+
+    public function login(Request $request){
+        if ($request->isMethod('post')){
+
+            $data=$request->only('mail','password');
+            if(Auth::attempt($data)){
+                return redirect('/top');
+            }
+        }
+        return view("auth.login");
+    }
+    // protected function redirectTo($request)
+    // {
+        // if (! $request->expectsJson()) {
+            // return route('login');
+        // }
+    // }
 }
