@@ -1,5 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);
-@charset "UTF-8";
+@CHARSET "UTF-8";
 
 /*!
  * Bootstrap v3.3.7 (http://getbootstrap.com)
@@ -7638,7 +7638,7 @@ button.close {
   border: 1px solid #fff;
   border-radius: 10px;
   cursor: pointer;
-  background-color: #000\9;
+  background-color: #000/9;
   background-color: transparent
 }
 
@@ -7965,4 +7965,32 @@ button.close {
   .hidden-print {
     display: none !important
   }
+}
+
+.menu {
+  display: none;
+  padding: 10px 20px;
+}
+
+.menu-btn {
+  position: relative;
+}
+
+.menu-btn::after {
+  border-right: solid 2px #fff;
+  border-top: solid 2px #fff;
+  content: "";
+  display: block;
+  height: 8px;
+  position: absolute;
+  right: 25px;
+  top: 38%;
+  transform: rotate(135deg);
+  transition: transform .3s ease-in-out, top .3s ease-in-out;
+  width: 8px;
+}
+
+.menu-btn.open::after {
+  top: 45%;
+  transform: rotate(-45deg);
 }
