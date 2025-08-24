@@ -7976,7 +7976,20 @@ button.close {
   position: relative;
 }
 
-.menu-btn::after {
+.menu-btn:after {
+  content: "";
+  border-top: solid 2px #fff;
+  border-right: solid 2px #fff;
+  display: block;
+  width: 10px;
+  height: 10px;
+  transform: rotate(-135deg) translateY(9px);
+  position: absolute;
+  right: 20px;
+  top: 50%;
+}
+
+/* .menu-btn::after {
   border-right: solid 2px #fff;
   border-top: solid 2px #fff;
   content: "";
@@ -7988,7 +8001,7 @@ button.close {
   transform: rotate(135deg);
   transition: transform .3s ease-in-out, top .3s ease-in-out;
   width: 8px;
-}
+} */
 
 .menu-btn.open::after {
   top: 45%;
