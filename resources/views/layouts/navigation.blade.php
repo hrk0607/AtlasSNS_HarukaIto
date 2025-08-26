@@ -5,7 +5,9 @@
                     <p>{{ session ('username') }}さん</p>
                 </div>
                 <div class="accordion">
-                    <button class="menu-btn "></button>
+                    <div class="menu-btn">
+                        <span></span><span></span>
+                    </div>
                         <ul class ="menu">
                             <li><a href="/top">ホーム</a></li>
                             <li><a href="/profile">プロフィール</a></li>
