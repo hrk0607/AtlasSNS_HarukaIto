@@ -35,4 +35,13 @@ class AuthenticatedSessionController extends Controller
         return redirect()->intended('top');
     }
 
+    public function logout(Request $request)
+        {
+            Auth::logout(); // ユーザーをログアウトさせる
+            $request->session()->invalidate(); // セッションを無効化する
+            $request->session()->regenerateToken(); // セッショントークンを再生成する
+
+            return redirect('/login'); // ログインページなどにリダイレクトする
+        }
+
 }
