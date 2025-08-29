@@ -35,6 +35,13 @@ class AuthenticatedSessionController extends Controller
         return redirect()->intended('top');
     }
 
+    public function __construct()
+    {
+        $this->middleware('guest')->except('logout');
+    }
+
+
+
     public function logout(Request $request)
         {
             Auth::logout(); // ユーザーをログアウトさせる

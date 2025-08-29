@@ -12,11 +12,6 @@ class Authenticate extends Middleware
      * @param  \Illuminate\Http\Request  $request
      * @return string|null
      */
-    public function __construct()
-    {
-        $this->middleware('guest')->except('logout');
-    }
-
     public function login(Request $request){
         if ($request->isMethod('post')){
 
