@@ -13,4 +13,26 @@ class FollowsController extends Controller
     public function followerList(){
         return view('follows.followerList');
     }
+
+    // ログイン中のユーザーが誰かをフォローする処理
+    public function follow(User $user)
+    {
+        // 二重フォロー防止
+        if (!auth()->user()->followings()->where('followed_id', $user->id)->exists()) {
+            auth()->user()->followings()->attach($user->id);
+        }
+
+        return back();
+    }
+
+    // フォロー解除
+    public function unfollow(User $user)
+    {
+        // フォローしているときだけ解除
+        if (auth()->user()->followings()->where('followed_id', $user->id)->exists()) {
+            auth()->user()->followings()->detach($user->id);
+        }
+
+        return back();
+    }
 }
