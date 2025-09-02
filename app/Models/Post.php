@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Post extends Model
 {
     use HasFactory;
+
+    protected $fillable = ['post']; // ← 投稿内容のカラム名に合わせてね
 }

@@ -1,5 +1,6 @@
+<section>
+  <div>
 <x-logout-layout>
-
   <!-- 適切なURLを入力してください -->
   {!! Form::open(['url' => 'login']) !!}
 
@@ -17,3 +18,5 @@
   {!! Form::close() !!}
 
 </x-logout-layout>
+  </div>
+</section>
