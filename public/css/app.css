@@ -8057,53 +8057,6 @@ button.close {
   transform: rotate(-45deg);
 } */
 
-li {
-  list-style: none;
-  border-bottom: 1px solid #000;
-  display: flex;
-}
-
-.post-content {
-  width: 100%;
-  padding: 15px;
-}
-
-.post-content>div {
-  display: flex;
-  justify-content: space-between;
-}
-
-.post-name {
-  margin-bottom: 10px;
-}
-
-div {
-  height: 100vh;
-  background-color: #D9AFD9;
-  background-image: linear-gradient(0deg, #D9AFD9 0%, #97D9E1 100%);
-}
-
-div {
-  margin-bottom: 20px;
-}
-
-label,
-input {
-  display: block;
-}
-
-section {
-  background-color: #ccd8ff;
-  padding: 50px 0;
-}
-
-div {
-  width: 100px;
-  height: 100px;
-  background-color: #4773ff;
-  margin: 0 auto;
-}
-
 /* 必要に応じて編集しご自身でSNS課題のレイアウトのようにカスタマイズしてください。 */
 .content {
   margin: 0 auto;

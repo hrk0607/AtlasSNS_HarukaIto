@@ -1,5 +1,6 @@
 <x-login-layout>
-<link rel="stylesheet" href="{{ asset('css/app.css') }}">
+<link rel="stylesheet" href="{{ asset('css/style.css') }}">
+
 <h2>投稿フォーム</h2>
 
 <form action="{{ route('posts.store') }}" method="POST">
@@ -11,32 +12,36 @@
 <hr>
 
 <div>
-  <ul>
+  <ul class="post-list">
     @foreach($posts as $value)
       <li class="post-block">
         <figure>
           <img src="https://placehold.jp/50x50.png" alt="{{ $value->user->name ?? 'User' }}">
         </figure>
         <div class="post-content">
-          <div>
+          <div class="post-header">
             <div class="post-name">{{ $value->user->name ?? 'User' }}</div>
-            <div>{{ $value->created_at->format('Y-m-d') }}</div>
+            <div class="post-date">{{ $value->created_at->format('Y-m-d') }}</div>
           </div>
-          <div>{{ $value->post }}</div>
+          <div class="post-text">{{ $value->post }}</div>
         </div>
       </li>
     @endforeach
-    <div class="modal js-modal">
-        <div class="modal__bg js-modal-close"></div>
-        <div class="modal__content">
-           <form action="" method="">
-                <textarea name="" class="modal_post"></textarea>
-                <input type="hidden" name="" class="modal_id" value="">
-                <input type="submit" value="更新">
-                {{ csrf_field() }}
-           </form>
-           <a class="js-modal-close" href="">閉じる</a>
-        </div>
-          </ul>
+  </ul>
+</div>
+
+<!-- 編集用モーダルは ul の外 -->
+<div class="modal js-modal">
+    <div class="modal__bg js-modal-close"></div>
+    <div class="modal__content">
+        <form action="" method="">
+            <textarea name="" class="modal_post"></textarea>
+            <input type="hidden" name="" class="modal_id" value="">
+            <input type="submit" value="更新">
+            {{ csrf_field() }}
+        </form>
+        <a class="js-modal-close" href="">閉じる</a>
     </div>
+</div>
+
 </x-login-layout>
