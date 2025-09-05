@@ -7,22 +7,76 @@ html {
 body {
     height: 100%;
     background: #186AC9;
-}
-
-section {
-    background-color: #ccd8ff;
-    padding: 50px 0;
-}
-
-div {
-    width: 100px;
-    height: 100px;
-    background-color: #4773ff;
-    margin: 0 auto;
-    height: 100vh;
     background-color: #D9AFD9;
-    background-image: linear-gradient(0deg, #D9AFD9 0%, #97D9E1 100%);
-    margin-bottom: 20px;
+    background-image: linear-gradient(#0075cd 30%, #ffff00);
+}
+
+/* section {
+    padding: 30px 0;
+} */
+
+.container {
+    background-color: rgba(0, 0, 0, 0.15);
+    /* ボックスを半透明にする */
+    color: #ffffff;
+    border-radius: 10px;
+    /* 角丸にする */
+    width: 20%;
+    height: 50%;
+}
+
+.logo-area {
+    text-align: center;
+    /* ボックス外の上の中央寄せ */
+    padding-top: 50px;
+}
+
+.logo-area img {
+    max-width: 150px;
+    /* ロゴの大きさを調整（お好みで） */
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    /* 念のため画像も中央寄せ */
+}
+
+.logo-area p {
+    font-size: 35px;
+    color: #ffffff;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.login-box {
+    text-align: center;
+    padding: 30px 10px;
+}
+
+.login-box p {
+    font-size: 20px;
+}
+
+.form-label {
+    font-size: 15px;
+    text-align: left;
+    font-weight: normal;
+}
+
+.form-input {
+    margin: 0 auto;
+    font-size: 22px;
+}
+
+.btn-danger {
+    font-size: 18px;
+    padding: 5px 20px;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+.register-link {
+    color: #ffffff;
+    font-size: 15px;
 }
 
 label,

@@ -8087,3 +8087,10 @@ button.close {
   transform: translate(-50%, -50%);
   width: 60%;
 }
+
+/* ================================
+   全体フォントの上書き設定（XD用）
+================================ */
+body {
+  font-family: 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', '游ゴシック', sans-serif !important;
+}

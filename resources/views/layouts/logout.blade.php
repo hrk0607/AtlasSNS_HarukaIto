@@ -21,15 +21,24 @@
         <link rel="icon" href="画像URL" sizes="62x62" type="image/png" />
         <!--iphoneのアプリアイコン指定-->
         <link rel="apple-touch-icon-precomposed" href="画像のURL" />
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Bootstrap JavaScript（必要な場合のみ） -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     </head>
     <body>
         <header>
+            <div class ="logo-area">
             <h1><a href ="{{ url('/top') }}"><img src="images/atlas.png"></a></h1>
             <p>Social Network Service</p>
+            </div>
         </header>
-        <div id="container">
+        <div class="container">
             {{ $slot }}
         </div>
+
+
         <script src="{{ asset('js/app.js') }}"></script>
         <script src="JavaScriptファイルのURL"></script>
         <script src="JavaScriptファイルのURL"></script>
