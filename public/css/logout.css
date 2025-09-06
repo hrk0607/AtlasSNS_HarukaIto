@@ -9,6 +9,9 @@ body {
     background: #186AC9;
     background-color: #D9AFD9;
     background-image: linear-gradient(#0075cd 30%, #ffff00);
+    background-attachment: fixed;
+    padding: 50px 0;
+    box-sizing: border-box;
 }
 
 /* section {
@@ -22,13 +25,12 @@ body {
     border-radius: 10px;
     /* 角丸にする */
     width: 20%;
-    height: 50%;
+    overflow: hidden;
 }
 
 .logo-area {
     text-align: center;
     /* ボックス外の上の中央寄せ */
-    padding-top: 50px;
 }
 
 .logo-area img {
@@ -47,9 +49,14 @@ body {
     margin-bottom: 30px;
 }
 
+.login-section {
+    height: fit-content;
+}
+
 .login-box {
     text-align: center;
-    padding: 30px 10px;
+    margin: 30px 10px;
+    height: auto;
 }
 
 .login-box p {
@@ -60,6 +67,7 @@ body {
     font-size: 15px;
     text-align: left;
     font-weight: normal;
+    margin-top: 5px;
 }
 
 .form-input {
@@ -74,7 +82,8 @@ body {
     margin-bottom: 40px;
 }
 
-.register-link {
+.register-link,
+.login-link {
     color: #ffffff;
     font-size: 15px;
 }

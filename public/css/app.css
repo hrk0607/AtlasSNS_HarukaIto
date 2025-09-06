@@ -7972,10 +7972,10 @@ button.close {
   justify-content: flex-end;
 }
 
-#username {
+/* #username {
   font-size: 18px;
   color: white;
-}
+} */
 
 .menu {
   display: none;
