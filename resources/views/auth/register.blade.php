@@ -14,10 +14,10 @@
 {{ Form::email('email', null, ['class' => 'form-input']) }}
 
 {{ Form::label('password', 'パスワード', ['class' => 'form-label']) }}
-{{ Form::text('password' ,null, ['class' => 'form-input']) }}
+{{ Form::password('password', ['class' => 'form-input']) }}
 
 {{ Form::label('password_confirmation', 'パスワード確認', ['class' => 'form-label']) }}
-{{ Form::text('password_confirmation', null, ['class' => 'form-input']) }}
+{{ Form::password('password_confirmation', ['class' => 'form-input']) }}
 
 <div class="text-end">
     {{ Form::submit('新規登録', ['class' => 'btn btn-danger btn-lg']) }}
