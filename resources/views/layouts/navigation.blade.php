@@ -1,5 +1,4 @@
 <link rel="stylesheet" href="{{ asset('css/style.css') }}" />
-<link rel="stylesheet" href="{{ asset('css/logout.css') }}" disabled>
 <div id="head">
             <h1><a href ="{{ url('/top') }}"><img src="images/atlas.png"></a></h1>
             <div id="sub-head">
