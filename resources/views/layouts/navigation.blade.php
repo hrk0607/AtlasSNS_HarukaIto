@@ -1,5 +1,15 @@
-<link rel="stylesheet" href="{{ asset('css/style.css') }}" />
-<div id="head">
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}" />
+            <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+            <script src="js/script.js"></script>
+
+</head>
+<body>
+    <div id="nav-header">
             <h1><a href ="{{ url('/top') }}"><img src="images/atlas.png"></a></h1>
             <div id="sub-head">
                 <div id="username">
@@ -23,7 +33,6 @@
                     </ul>
                 </div>
             </div>
-            <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-            <script src="js/script.js"></script>
         </div>
-</link>
+</body>
+</html>
