@@ -4,8 +4,19 @@
 
 $(function () {
   $(".menu-btn").on("click", function () {
-    $(this).next().slideToggle(300);
-    $(this).toggleClass("open", 300);
+    // ボタンにopenクラスを付け外し
+    $(this).toggleClass("open");
+
+    // クリックしたボタンの親(.accordion)内の.menuを取得して開閉
+    $(this).closest(".accordion").find(".menu").slideToggle(300);
+  });
+
+  // メニュー以外をクリックしたらメニューを閉じる
+  $(document).on("click", function (e) {
+    if (!$(e.target).closest(".accordion").length) {
+      $(".menu").slideUp(300);
+      $(".menu-btn").removeClass("open");
+    }
   });
 });
 $(function () {

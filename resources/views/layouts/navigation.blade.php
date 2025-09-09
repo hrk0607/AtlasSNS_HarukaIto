@@ -13,15 +13,15 @@
             <h1><a href ="{{ url('/top') }}"><img src="images/atlas.png"></a></h1>
             <div id="sub-head">
                 <div id="username">
-                    <p class="white">{{ Auth::user()->username }}さん</p>
+                    {{ Auth::user()->username }}さん
                 </div>
                 <div class="accordion">
                     <div class="menu-btn">
                         <span></span><span></span>
                     </div>
                     <ul class ="menu">
-                        <li><a href="/top">ホーム</a></li>
-                        <li><a href="/profile">プロフィール</a></li>
+                        <li><a href="/top">HOME</a></li>
+                        <li><a href="/profile">プロフィール編集</a></li>
                         <li>
                         <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                         ログアウト
@@ -32,6 +32,12 @@
                         </li>
                     </ul>
                 </div>
+                @if(Auth::user()->icon_image)
+                <div class="user-icon">
+                <img src="{{ asset('images/' . Auth::user()->icon_image) }}" alt="ユーザーアイコン">
+                </div>
+                @endif
+
             </div>
         </div>
 </body>
