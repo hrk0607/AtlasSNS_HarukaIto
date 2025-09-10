@@ -1,15 +1,33 @@
 <x-login-layout>
 <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 
-<h2>投稿フォーム</h2>
+                @if(Auth::user()->icon_image)
+                <div class="user-icon">
+                <img src="{{ asset('images/' . Auth::user()->icon_image) }}" alt="ユーザーアイコン">
+                </div>
+                @endif
 
-<form action="{{ route('posts.store') }}" method="POST">
-    @csrf
-    <input type="text" name="post" placeholder="投稿内容を入力" required>
-    <button type="submit">投稿</button>
-</form>
-
-<hr>
+<div class="container mt-3">
+  <div class="post-form-area d-flex justify-content-center">
+    <form action="{{ route('posts.store') }}" method="POST" class="d-flex align-items-center w-75">
+      @csrf
+      <div class="flex-grow-1 me-2">
+        <input
+          type="text"
+          name="content"
+          class="form-control post-input"
+          placeholder="投稿内容を入力してください。"
+          maxlength="150"
+          required
+        >
+      </div>
+      <button type="submit" class="post-btn">
+        <img src="{{ asset('images/post.png') }}" alt="投稿" class="post-icon">
+      </button>
+    </form>
+  </div>
+</div>
+                <hr>
 
 <div>
   <ul class="post-list">

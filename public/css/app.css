@@ -7972,48 +7972,6 @@ button.close {
   justify-content: flex-end;
 }
 
-/* #username {
-  font-size: 18px;
-  color: white;
-} */
-
-/* .menu-btn {
-  position: relative;
-}
-
-.menu-btn:after {
-  content: ">";
-  border-top: solid 2px #fff;
-  border-right: solid 2px #fff;
-  display: block;
-  width: 10px;
-  height: 10px;
-  transform: rotate(-135deg) translateY(9px);
-  position: absolute;
-  right: 20px;
-  top: 50%;
-} */
-
-/* .menu-btn::after {
-  border-right: solid 2px #fff;
-  border-top: solid 2px #fff;
-  content: "";
-  display: block;
-  height: 8px;
-  position: absolute;
-  right: 25px;
-  top: 38%;
-  transform: rotate(135deg);
-  transition: transform .3s ease-in-out, top .3s ease-in-out;
-  width: 8px;
-} */
-
-
-/* .menu-btn.open::after {
-  top: 45%;
-  transform: rotate(-45deg);
-} */
-
 /* 必要に応じて編集しご自身でSNS課題のレイアウトのようにカスタマイズしてください。 */
 .content {
   margin: 0 auto;

@@ -98,7 +98,7 @@ li {
     padding: 15px 0;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
     z-index: 1000;
-    width: 275px;
+    width: 287px;
     /* XDに合わせて調整 */
     padding: 0;
     margin: 0;
@@ -185,4 +185,74 @@ li {
 .menu-btn.open span:nth-child(2) {
     top: 17px;
     transform: rotate(50deg);
+}
+
+/* ユーザーアイコンと投稿フォームを横並びに */
+.post-form-area {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 15px;
+    /* アイコンとフォームの間隔 */
+    width: 100%;
+    max-width: 800px;
+    margin: 15px auto;
+}
+
+/* ユーザーアイコン */
+.user-icon {
+    margin-left: 15px;
+    /* ← 左に余白を追加 */
+    display: flex;
+    align-items: center;
+}
+
+.user-icon img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* 投稿フォーム全体 */
+.post-form-area form {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    gap: 10px;
+}
+
+/* 投稿入力欄 */
+.post-input {
+    border: none;
+    border-radius: 8px;
+    padding: 10px 15px;
+    font-size: 14px;
+    box-shadow: none;
+    background-color: #f5f5f5;
+    flex-grow: 1;
+}
+
+/* 投稿ボタン */
+.post-btn {
+    background: none;
+    border: none;
+    padding: 0;
+    margin-right: 15px;
+    /* ← 右に余白を追加 */
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.post-icon {
+    width: 40px;
+    height: auto;
+    transition: 0.2s ease;
+}
+
+/* ホバーで少し拡大 */
+.post-btn:hover .post-icon {
+    transform: scale(1.1);
 }
