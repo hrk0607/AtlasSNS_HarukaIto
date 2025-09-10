@@ -90,34 +90,55 @@ li {
     /* 初期は非表示 */
     position: absolute;
     /* 下に出したいから絶対配置 */
-    top: 40px;
-    /* .menu-btn の高さ＋余白分 */
-    right: 0;
-    background-color: #186AC9;
+    top: 56px;
+    /* .menu-btn の下 */
+    right: -100px;
+    background-color: #ffffff;
     /* 背景色 */
-    border-radius: 5px;
-    padding: 5px 0;
+    padding: 15px 0;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
     z-index: 1000;
-    width: 160px;
+    width: 275px;
     /* XDに合わせて調整 */
+    padding: 0;
+    margin: 0;
 }
 
 /* メニューの中のリンク */
 .menu li {
-    list-style: none;
-    padding: 10px 15px;
-    text-align: left;
+    padding: 0px;
+    text-align: center;
+    padding: 12px 0;
+    margin: 0;
 }
 
+/* 最後の項目の下線を消す */
+.menu li:last-child {
+    border-bottom: none;
+}
+
+/* プロフィール編集の背景だけ紺色 */
+.menu li:nth-child(2) {
+    background-color: #123c69;
+}
+
+/* プロフィール編集の文字だけ白 */
+.menu li:nth-child(2) a {
+    color: #ffffff;
+}
+
+/* その他リンク */
 .menu li a {
+    display: flex;
+    color: #727272;
+    font-size: 20px;
     text-decoration: none;
-    color: #fff;
-    display: block;
-}
-
-.menu li:hover {
-    background-color: #1454a3;
+    padding: 10px 0;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
 }
 
 .menu-btn {
