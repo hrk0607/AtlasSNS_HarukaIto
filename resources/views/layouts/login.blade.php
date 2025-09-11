@@ -7,7 +7,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="description" content="ページの内容を表す文章" />
   <title></title>
-  <link rel="stylesheet" href="{{ asset('css/reset.css') }} ">
+  <link rel="stylesheet" href="{{ asset('css/style.css') }} ">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <!--スマホ,タブレット対応-->
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -31,23 +32,29 @@
     <div id="container">
       {{ $slot }}
     </div>
-    <div id="side-bar">
-      <div id="confirm">
-        <p>{{ Auth::user()->username }}さんの</p>
-        <div>
-          <p>フォロー数</p>
-          <p>{{ auth()->user()->followings->count() }}名</p>
-        </div>
-        <p class="btn"><a href="follow-list">フォローリスト</a></p>
-        <div>
-          <p>フォロワー数</p>
-          <p>{{ auth()->user()->followers->count() }}名</p>
-        </div>
-        <p class="btn"><a href="follower-list">フォロワーリスト</a></p>
-      </div>
-      <p class="btn"><a href="{{ route ('search') }}">ユーザー検索</a></p>
+<div id="side-bar">
+  <div id="confirm">
+    <p>{{ Auth::user()->username }}さんの</p>
+    <div>
+      <p>フォロー数</p>
+      <p>{{ auth()->user()->followings->count() }}名</p>
     </div>
+    <div class="text-end">
+    {{ Form::button('フォローリスト', ['class' => 'btn btn-primary', 'onclick' => "location.href='" . url('follow-list') . "'"]) }}
+</div>
+
+    <div>
+      <p>フォロワー数</p>
+      <p>{{ auth()->user()->followers->count() }}名</p>
+    </div>
+    <div class="text-end">
+    {{ Form::button('フォロワーリスト', ['class' => 'btn btn-primary', 'onclick' => "location.href='" . url('follower-list') . "'"]) }}
+</div>
+
   </div>
+
+  <a href="{{ route('search') }}" class="btn btn-primary w-100">ユーザー検索</a>
+</div>
   <footer>
   </footer>
 <script src="{{ asset('js/app.js') }}"></script>
