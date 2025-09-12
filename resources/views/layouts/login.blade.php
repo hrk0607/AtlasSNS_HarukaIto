@@ -36,24 +36,34 @@
   <div id="confirm">
     <p>{{ Auth::user()->username }}さんの</p>
     <div>
-      <p>フォロー数</p>
-      <p>{{ auth()->user()->followings->count() }}名</p>
+      <div class="d-flex align-items-center">
+      <p style="width:100px;">フォロー数</p>
+      <p><span class="ms-4">{{ auth()->user()->followings->count() }}</span>人</p>
+</div>
     </div>
-    <div class="text-end">
-    {{ Form::button('フォローリスト', ['class' => 'btn btn-primary', 'onclick' => "location.href='" . url('follow-list') . "'"]) }}
+    <div class="text-end mb-3">
+    {{ Form::button('フォローリスト', ['class' => 'btn btn-primary btn-fixed', 'onclick' => "location.href='" . url('follow-list') . "'"]) }}
 </div>
 
     <div>
-      <p>フォロワー数</p>
-      <p>{{ auth()->user()->followers->count() }}名</p>
+      <div class="d-flex align-items-center">
+      <p style="width:100px;">フォロワー数</p>
+      <p><span class="ms-4">{{ auth()->user()->followers->count() }}</span>人</p>
     </div>
-    <div class="text-end">
-    {{ Form::button('フォロワーリスト', ['class' => 'btn btn-primary', 'onclick' => "location.href='" . url('follower-list') . "'"]) }}
 </div>
+    <div class="text-end">
+    {{ Form::button('フォロワーリスト', ['class' => 'btn btn-primary btn-fixed', 'onclick' => "location.href='" . url('follower-list') . "'"]) }}
+</div>
+<div style="margin: 20px 0;"></div>
+
+<hr>
+
+<div style="margin: 20px 0;"></div>
 
   </div>
-
-  <a href="{{ route('search') }}" class="btn btn-primary w-100">ユーザー検索</a>
+  <div class="text-center">
+  {{ Form::button('ユーザー検索', ['class' => 'btn btn-primary w-75', 'onclick' => "location.href='" . url('search') . "'"]) }}
+</div>
 </div>
   <footer>
   </footer>

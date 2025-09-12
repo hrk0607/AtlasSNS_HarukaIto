@@ -246,8 +246,17 @@ li {
 }
 
 #side-bar {
-    padding-left: 20px;
-    /* 左に余白 */
-    padding-right: 20px;
-    /* 右に余白 */
+    padding: 20px;
+    /* 上下左右ぜんぶ20px */
+}
+
+#side-bar hr {
+    margin-left: -20px;
+    margin-right: -35px;
+}
+
+#side-bar .btn-fixed {
+    width: 120px;
+    font-size: 13px;
+    padding: 8px 0;
 }
