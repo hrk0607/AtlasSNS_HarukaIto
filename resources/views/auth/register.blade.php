@@ -9,12 +9,21 @@
 
 {{ Form::label('username', 'ユーザー名', ['class' => 'form-label']) }}
 {{ Form::text('username', null, ['class' => 'form-input']) }}
+@error('username')
+            <div class="text-danger small">{{ $message }}</div>
+        @enderror
 
 {{ Form::label('email', 'メールアドレス', ['class' => 'form-label']) }}
 {{ Form::email('email', null, ['class' => 'form-input']) }}
+@error('email')
+            <div class="text-danger small">{{ $message }}</div>
+        @enderror
 
 {{ Form::label('password', 'パスワード', ['class' => 'form-label']) }}
 {{ Form::password('password', ['class' => 'form-input']) }}
+@error('password')
+            <div class="text-danger small">{{ $message }}</div>
+        @enderror
 
 {{ Form::label('password_confirmation', 'パスワード確認', ['class' => 'form-label']) }}
 {{ Form::password('password_confirmation', ['class' => 'form-input']) }}
