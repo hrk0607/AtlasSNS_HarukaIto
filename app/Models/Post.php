@@ -9,5 +9,5 @@ class Post extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['post']; // ← 投稿内容のカラム名に合わせてね
+    protected $fillable = ['post', 'user_id']; // ← 投稿内容のカラム名に合わせてね
 }

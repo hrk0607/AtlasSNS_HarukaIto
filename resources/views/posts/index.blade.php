@@ -1,6 +1,8 @@
 <x-login-layout>
 <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 
+<form action="{{ route('posts.store') }}" method="POST">
+  @csrf
 <div class="post-form-area">
   <div class="post-user-icon">
     <img src="{{ asset('images/' . Auth::user()->icon_image) }}" alt="ユーザーアイコン">
@@ -12,8 +14,10 @@
       class="post-input"
       placeholder="投稿内容を入力してください。"
       maxlength="150"
-      required
     >
+@error('content')
+    <div class="text-danger small">{{ $message }}</div>
+@enderror
     <div class="post-bottom">
       <button type="submit" class="post-btn">
         <img src="{{ asset('images/post.png') }}" alt="投稿">
@@ -21,6 +25,7 @@
     </div>
   </div>
 </div>
+</form>
                <hr>
 
 <div>

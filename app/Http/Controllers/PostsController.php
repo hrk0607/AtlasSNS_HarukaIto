@@ -18,12 +18,13 @@ class PostsController extends Controller
     {
         // バリデーション
         $request->validate([
-            'post' => 'required|string|max:255',
+            'content' => 'required|string|max:150',
         ]);
 
         // 投稿を作成
         Post::create([
-            'post' => $request->post,
+            'post' => $request->content,
+            'user_id' => auth()->id(),
         ]);
 
         // 一覧ページへリダイレクト
