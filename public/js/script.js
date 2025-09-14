@@ -20,26 +20,38 @@ $(function () {
   });
 });
 $(function () {
-  // 編集ボタン(class="js-modal-open")が押されたら発火
-  $('.js-modal-open').on('click', function () {
-    // モーダルの中身(class="js-modal")の表示
-    $('.js-modal').fadeIn();
-    // 押されたボタンから投稿内容を取得し変数へ格納
-    var post = $(this).attr('post');
-    // 押されたボタンから投稿のidを取得し変数へ格納（どの投稿を編集するか特定するのに必要な為）
-    var post_id = $(this).attr('post_id');
+  // 編集ボタンが押されたとき
+  $('.js-edit-btn').on('click', function () {
+    var post_id = $(this).data('id');           // 投稿id
+    var post_content = $(this).data('content'); // 投稿内容
 
-    // 取得した投稿内容をモーダルの中身へ渡す
-    $('.modal_post').text(post);
-    // 取得した投稿のidをモーダルの中身へ渡す
+    // テキストエリアに値を入れる
+    $('.modal_post').val(post_content);
     $('.modal_id').val(post_id);
+
+    // フォームのactionをid付きにする
+    $('#editForm').attr('action', '/posts/' + post_id);
+
+    // モーダルを表示
+    $('.js-modal').fadeIn();
     return false;
   });
 
-  // 背景部分や閉じるボタン(js-modal-close)が押されたら発火
+  // 閉じる
   $('.js-modal-close').on('click', function () {
-    // モーダルの中身(class="js-modal")を非表示
     $('.js-modal').fadeOut();
     return false;
+  });
+});
+
+$(function () {
+  $('.js-delete-btn').on('click', function () {
+    var postId = $(this).data('id');
+    $('#deleteForm').attr('action', '/posts/' + postId);
+    $('.js-delete-modal').fadeIn();
+  });
+
+  $('.js-modal-close').on('click', function () {
+    $('.js-delete-modal').fadeOut();
   });
 });

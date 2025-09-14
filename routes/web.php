@@ -48,3 +48,5 @@ Route::delete('/users/{user}/unfollow', [FollowsController::class, 'unfollow'])-
 
 Route::get('posts', [PostsController::class, 'index'])->name('posts.index');
 Route::post('posts', [PostsController::class, 'store'])->name('posts.store');
+
+Route::put('/posts/{id}', [PostsController::class, 'update'])->name('posts.update');
