@@ -93,8 +93,8 @@
     <form id="deleteForm" method="POST">
       @csrf
       @method('DELETE')
-      <button type="submit" class="btn btn-danger">OK</button>
-      <button type="button" class="btn btn-secondary js-modal-close">キャンセル</button>
+      <button type="submit" class="btn btn-primary btn-modal">OK</button>
+      <button type="button" class="btn btn-outline-secondary btn-modal js-modal-close">キャンセル</button>
     </form>
   </div>
 </div>

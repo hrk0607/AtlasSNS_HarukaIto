@@ -284,34 +284,43 @@ li {
     margin-top: 4px;
 }
 
-/* 背景は消してモーダル本体だけ */
+/* 背景は無し */
 .modal__bg {
     display: none;
-    /* 使わないので非表示 */
 }
 
 /* モーダル本体 */
 .modal__content {
     position: fixed;
-    top: 20px;
-    /* 画面上から20pxくらいに配置 */
+    top: 0;
+    /* 上の余白なし */
     left: 50%;
-    /* 横中央 */
     transform: translateX(-50%);
-    /* 横だけ中央に */
     background: #fff;
-    /* 白背景 */
-    padding: 20px 30px;
-    border-radius: 8px;
-    text-align: center;
+    padding: 20px 20px;
+    border: 1px solid #ccc;
+    /* 縁グレー */
+    border-radius: 0;
+    /* 角丸なし */
+    box-shadow: none;
+    /* 影無し */
     z-index: 1000;
     min-width: 300px;
-    /* 幅調整用 */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    /* ほんのり影（好みで） */
+    width: 500px;
 }
 
-/* 最初は非表示 */
-.js-delete-modal {
-    display: none;
+/* ボタン配置 */
+.modal__content form {
+    display: flex;
+    justify-content: flex-end;
+    /* 右寄せ */
+    gap: 10px;
+    /* ボタンの間隔 */
+    margin-top: 50px;
+}
+
+/* ボタンサイズ統一 */
+.modal__content .btn-modal {
+    width: 110px;
+    /* 同じ幅にする */
 }
