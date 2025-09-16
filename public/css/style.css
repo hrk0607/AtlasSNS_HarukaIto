@@ -59,7 +59,7 @@ li {
     padding: 0 15px;
 }
 
-.post-content>div {
+.post-header {
     display: flex;
     justify-content: space-between;
 }
@@ -272,4 +272,46 @@ li {
 
 .post-list {
     padding: 0 10px 0 150px;
+}
+
+.post-actions {
+    display: flex;
+    /* 横並び（幅は中身に合わせる） */
+    justify-content: flex-end;
+    /* 右寄せ */
+    gap: 8px;
+    /* ボタン間の隙間 */
+    margin-top: 4px;
+}
+
+/* 背景は消してモーダル本体だけ */
+.modal__bg {
+    display: none;
+    /* 使わないので非表示 */
+}
+
+/* モーダル本体 */
+.modal__content {
+    position: fixed;
+    top: 20px;
+    /* 画面上から20pxくらいに配置 */
+    left: 50%;
+    /* 横中央 */
+    transform: translateX(-50%);
+    /* 横だけ中央に */
+    background: #fff;
+    /* 白背景 */
+    padding: 20px 30px;
+    border-radius: 8px;
+    text-align: center;
+    z-index: 1000;
+    min-width: 300px;
+    /* 幅調整用 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* ほんのり影（好みで） */
+}
+
+/* 最初は非表示 */
+.js-delete-modal {
+    display: none;
 }

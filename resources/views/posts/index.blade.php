@@ -54,7 +54,7 @@
       style="background:none;border:none;cursor:pointer;">
       <img src="{{ asset('images/edit.png') }}" alt="編集" class="icon-btn">
     </button>
-    {{-- ここを削除フォームからモーダル用ボタンに変更 --}}
+    <!-- {{-- ここを削除フォームからモーダル用ボタンに変更 --}} -->
     <button
       type="button"
       class="js-delete-btn"
@@ -63,7 +63,8 @@
       <img src="{{ asset('images/trash.png') }}" alt="削除" class="icon-btn">
     </button>
   </div>
-@endif        </div>
+@endif
+        </div>
       </li>
     @endforeach
   </ul>
@@ -88,7 +89,7 @@
 <div class="modal js-delete-modal">
   <div class="modal__bg js-modal-close"></div>
   <div class="modal__content">
-    <p>この投稿を削除してもよろしいですか？</p>
+    <p>この投稿を削除します。よろしいでしょうか？</p>
     <form id="deleteForm" method="POST">
       @csrf
       @method('DELETE')
