@@ -324,3 +324,27 @@ li {
     width: 110px;
     /* 同じ幅にする */
 }
+
+.edit-btn {
+    width: 40px;
+    height: 40px;
+    background: url('/images/edit.png') no-repeat center/contain;
+    border: none;
+    cursor: pointer;
+}
+
+.edit-btn:hover {
+    background: url('/images/edit_h.png') no-repeat center/contain;
+}
+
+.trash-btn {
+    width: 40px;
+    height: 40px;
+    background: url('/images/trash.png') no-repeat center/contain;
+    border: none;
+    cursor: pointer;
+}
+
+.trash-btn:hover {
+    background: url('/images/trash-h.png') no-repeat center/contain;
+}

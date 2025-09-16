@@ -48,19 +48,15 @@
 @if(Auth::id() === $value->user_id)
   <div class="post-actions">
     <button
-      class="js-edit-btn"
+      class="js-edit-btn edit-btn"
       data-id="{{ $value->id }}"
-      data-content="{{ $value->post }}"
-      style="background:none;border:none;cursor:pointer;">
-      <img src="{{ asset('images/edit.png') }}" alt="編集" class="icon-btn">
+      data-content="{{ $value->post }}">
     </button>
     <!-- {{-- ここを削除フォームからモーダル用ボタンに変更 --}} -->
     <button
       type="button"
-      class="js-delete-btn"
-      data-id="{{ $value->id }}"
-      style="background:none;border:none;cursor:pointer;">
-      <img src="{{ asset('images/trash.png') }}" alt="削除" class="icon-btn">
+      class="js-delete-btn trash-btn"
+      data-id="{{ $value->id }}">
     </button>
   </div>
 @endif
