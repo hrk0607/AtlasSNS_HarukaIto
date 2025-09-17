@@ -50,3 +50,5 @@ Route::get('posts', [PostsController::class, 'index'])->name('posts.index');
 Route::post('posts', [PostsController::class, 'store'])->name('posts.store');
 
 Route::delete('/posts/{id}', [PostsController::class, 'destroy'])->name('posts.destroy');
+
+Route::put('/posts/{id}', [PostsController::class, 'update'])->name('posts.update');

@@ -45,7 +45,7 @@ class PostsController extends Controller
 
         $post->update(['post' => $request->post]);
 
-        return redirect()->back();
+        return redirect()->route('posts.index');
     }
 
     public function destroy($id)
@@ -57,4 +57,5 @@ class PostsController extends Controller
         $post->delete();
         return redirect()->route('posts.index');
     }
+
 }

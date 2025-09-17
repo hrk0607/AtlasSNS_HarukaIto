@@ -66,25 +66,24 @@
   </ul>
 </div>
 
-<!-- 編集用モーダルは ul の外 -->
-<div class="modal js-modal">
+<!-- 編集用モーダル -->
+<div class="modal js-modal edit-modal">
   <div class="modal__bg js-modal-close"></div>
-  <div class="modal__content">
+  <div class="modal__content edit-modal__content">
     <form id="editForm" action="" method="POST">
       @csrf
       @method('PUT')
       <textarea name="post" class="modal_post" maxlength="150" required></textarea>
       <input type="hidden" name="id" class="modal_id" value="">
-      <input type="submit" value="更新">
+      <button type="submit" class="edit-submit-btn"></button>
     </form>
-    <a class="js-modal-close" href="">閉じる</a>
   </div>
 </div>
 
 <!-- 削除用モーダル -->
-<div class="modal js-delete-modal">
+<div class="modal js-delete-modal delete-modal">
   <div class="modal__bg js-modal-close"></div>
-  <div class="modal__content">
+  <div class="modal__content delete-modal__content">
     <p>この投稿を削除します。よろしいでしょうか？</p>
     <form id="deleteForm" method="POST">
       @csrf
@@ -93,5 +92,4 @@
       <button type="button" class="btn btn-outline-secondary btn-modal js-modal-close">キャンセル</button>
     </form>
   </div>
-</div>
-</x-login-layout>
+</div></x-login-layout>

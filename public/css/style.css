@@ -285,15 +285,20 @@ li {
 }
 
 /* 背景は無し */
-.modal__bg {
+/* 共通（何もなければ非表示） */
+.modal {
     display: none;
 }
 
-/* モーダル本体 */
-.modal__content {
+/* ---------- 削除モーダル用 ---------- */
+.delete-modal .modal__bg {
+    display: none;
+    /* 背景いらない */
+}
+
+.delete-modal__content {
     position: fixed;
     top: 0;
-    /* 上の余白なし */
     left: 50%;
     transform: translateX(-50%);
     background: #fff;
@@ -309,14 +314,75 @@ li {
     width: 500px;
 }
 
+/* ---------- 編集モーダル用 ---------- */
+.edit-modal .modal__bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    /* 半透明黒 */
+    z-index: 999;
+}
+
+.edit-modal__content {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    padding: 0px 40px;
+    /* 全体余白を増やして大きく見せる */
+    border-radius: 8px;
+    text-align: center;
+    z-index: 1000;
+    width: 800px;
+    /* 横幅大きく */
+    max-width: 90%;
+}
+
+/* form 内の要素を縦並びにする */
+.edit-modal__content form {
+    display: flex;
+    flex-direction: column;
+    /* 縦並び */
+    align-items: center;
+    /* 中央揃え */
+}
+
+/* 入力欄 */
+.edit-modal__content .modal_post {
+    width: 100%;
+    height: 200px;
+    font-size: 16px;
+    margin-bottom: 20px;
+    /* ボタンとの余白 */
+    resize: none;
+}
+
+/* 更新ボタンを中央に */
+.edit-submit-btn {
+    width: 50px;
+    height: 50px;
+    background: url('/images/edit.png') no-repeat center/contain;
+    border: none;
+    cursor: pointer;
+    display: block;
+    /* ブロック要素にする */
+    margin-bottom: 20px;
+}
+
+.edit-submit-btn:hover {
+    background: url('/images/edit_h.png') no-repeat center/contain;
+}
+
 /* ボタン配置 */
 .modal__content form {
     display: flex;
     justify-content: flex-end;
     /* 右寄せ */
-    gap: 10px;
-    /* ボタンの間隔 */
-    margin-top: 50px;
+    margin-top: 40px;
 }
 
 /* ボタンサイズ統一 */
