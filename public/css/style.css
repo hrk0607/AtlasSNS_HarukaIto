@@ -414,3 +414,77 @@ li {
 .trash-btn:hover {
     background: url('/images/trash-h.png') no-repeat center/contain;
 }
+
+/* 検索フォーム全体に余白 */
+.search-form {
+    display: flex;
+    /* 入力とボタンを横並び */
+    justify-content: flex-start;
+    /* 中央揃え */
+    align-items: center;
+    gap: 10px;
+    /* 入力とボタンの間の隙間 */
+    margin: 40px 40px;
+    /* 上下左右余白 */
+}
+
+.search-input {
+    width: 30%;
+    /* 全体の30%くらいに */
+    min-width: 150px;
+    /* ある程度の最小幅を確保（任意） */
+    padding: 6px 10px;
+    /* 内側の余白調整（任意） */
+    box-sizing: border-box;
+}
+
+/* 検索ボタン */
+.search-btn {
+    background: none;
+    /* 背景なし */
+    border: none;
+    /* 枠なし */
+    padding: 0;
+    /* 余白なし */
+    cursor: pointer;
+    /* ポインターに */
+}
+
+.search-btn img {
+    width: 40px;
+    height: 40px;
+    display: block;
+    /* 画像の下の隙間を消す */
+}
+
+/* 検索結果リスト全体 */
+.search-results {
+    list-style: none;
+    padding-left: 0;
+    margin: 40px auto;
+    /* 上下左右余白 */
+    max-width: 500px;
+    /* 幅の制限 */
+}
+
+/* 各ユーザーの行 */
+.search-results li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+/* アイコン画像 */
+.user-icon img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* ユーザー名 */
+.user-name {
+    font-size: 14px;
+}
