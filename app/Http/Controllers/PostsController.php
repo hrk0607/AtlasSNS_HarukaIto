@@ -8,10 +8,23 @@ use App\Models\Post;
 class PostsController extends Controller
 {
     public function index()
-    {
-        $posts = Post::with('user')->latest()->get();
+{
+        $user = auth()->user();
+
+        // 自分がフォローしているユーザーID一覧を取得
+        $followingIds = $user->followings()->pluck('users.id');
+
+        // 自分自身のIDも追加
+        $ids = $followingIds->push($user->id);
+
+        // そのユーザーたちの投稿だけ取得（新しい順）
+        $posts = Post::with('user')
+            ->whereIn('user_id', $ids)
+            ->latest()
+            ->get();
+
         return view('posts.index', compact('posts'));
-    }
+}
 
     // 投稿を保存する処理
     public function store(Request $request)

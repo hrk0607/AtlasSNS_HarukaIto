@@ -16,17 +16,35 @@
 <hr class="custom-hr">
 
 @if(isset($users))
-  <ul class="search-results">
-    @forelse($users as $user)
-      <li>
+<ul class="search-results">
+  @forelse($users as $user)
+    <li class="search-item">
+      {{-- 左側（アイコン＋名前） --}}
+      <div class="user-info">
         <div class="user-icon">
           <img src="{{ asset('images/' . $user->icon_image) }}" alt="{{ $user->username }}">
         </div>
         <div class="user-name">{{ $user->username }}</div>
-      </li>
-    @empty
-      <li>該当するユーザーはいませんでした。</li>
-    @endforelse
-  </ul>
-@endif
+      </div>
+
+      {{-- 右側（ボタン） --}}
+      <div class="user-action">
+        @if(Auth::user()->followings->contains($user->id))
+          <form action="{{ route('users.unfollow', $user->id) }}" method="POST">
+            @csrf
+            @method('DELETE')
+            <button type="submit" class="btn btn-danger btn-sm follow-btn">フォロー解除</button>
+          </form>
+        @else
+          <form action="{{ route('users.follow', $user->id) }}" method="POST">
+            @csrf
+            <button type="submit" class="btn btn-info btn-sm text-white follow-btn">フォローする</button>
+          </form>
+        @endif
+      </div>
+    </li>
+  @empty
+    <li>該当するユーザーはいませんでした。</li>
+  @endforelse
+</ul>@endif
 </x-login-layout>

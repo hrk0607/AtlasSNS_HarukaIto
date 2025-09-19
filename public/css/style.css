@@ -56,7 +56,7 @@ li {
 
 .post-content {
     width: 100%;
-    padding: 0 15px;
+    padding: 0px 15px;
 }
 
 .post-header {
@@ -259,7 +259,8 @@ li {
     margin-right: -35px;
 }
 
-#side-bar .btn-fixed {
+#side-bar .btn-fixed,
+.follow-btn {
     width: 120px;
     font-size: 13px;
     padding: 8px 0;
@@ -272,6 +273,11 @@ li {
 
 .post-list {
     padding: 0 10px 0 150px;
+
+}
+
+.post-list li {
+    border-bottom: 1px solid #ccc;
 }
 
 .post-actions {
@@ -463,17 +469,26 @@ li {
     padding-left: 0;
     margin: 40px auto;
     /* 上下左右余白 */
-    max-width: 500px;
+    max-width: 600px;
     /* 幅の制限 */
 }
 
 /* 各ユーザーの行 */
 .search-results li {
     display: flex;
+    justify-content: space-between;
+    /* 左右に分ける */
+    align-items: center;
+    /* 縦方向中央揃え */
+    padding: 20px 10px;
+}
+
+/* 左側（アイコン＋名前の塊） */
+.user-info {
+    display: flex;
     align-items: center;
     gap: 10px;
-    padding: 10px;
-    border-bottom: 1px solid #ccc;
+    /* アイコンと名前の間隔 */
 }
 
 /* アイコン画像 */
@@ -486,5 +501,5 @@ li {
 
 /* ユーザー名 */
 .user-name {
-    font-size: 14px;
+    font-size: 1.2rem;
 }
