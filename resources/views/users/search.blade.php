@@ -1,6 +1,7 @@
 <x-login-layout>
 <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 
+<div class="search-bar">
 <form action="{{ route('users.search') }}" method="GET" class="search-form">
   <input
     type="text"
@@ -12,6 +13,10 @@
     <img src="{{ asset('images/search.png') }}" alt="検索">
   </button>
 </form>
+@if(!empty($keyword))
+  <p class="search-keyword">検索ワード：{{ $keyword }}</p>
+@endif
+</div>
 
 <hr class="custom-hr">
 

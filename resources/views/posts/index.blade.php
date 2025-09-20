@@ -62,6 +62,9 @@
 @endif
         </div>
       </li>
+      @if (!$loop->last)
+      <hr class="post-divider">
+    @endif
     @endforeach
   </ul>
 </div>

@@ -276,8 +276,13 @@ li {
 
 }
 
-.post-list li {
-    border-bottom: 1px solid #ccc;
+.post-divider {
+    border: none;
+    /* デフォルト線を消す */
+    border-bottom: 1px solid #6c7d7d;
+    /* 下線を引く */
+    margin: 20px -10px 20px -150px;
+    /* 投稿と投稿の間隔 */
 }
 
 .post-actions {
@@ -421,6 +426,17 @@ li {
     background: url('/images/trash-h.png') no-repeat center/contain;
 }
 
+.search-bar {
+    display: grid;
+    grid-auto-flow: column;
+    /* 横方向に並べる */
+    align-items: center;
+    column-gap: 15px;
+    /* 間のスペース */
+    margin: 40px 60px;
+    /* 上下左右余白 */
+}
+
 /* 検索フォーム全体に余白 */
 .search-form {
     display: flex;
@@ -430,18 +446,14 @@ li {
     align-items: center;
     gap: 10px;
     /* 入力とボタンの間の隙間 */
-    margin: 40px 40px;
-    /* 上下左右余白 */
 }
 
 .search-input {
-    width: 30%;
-    /* 全体の30%くらいに */
-    min-width: 150px;
-    /* ある程度の最小幅を確保（任意） */
-    padding: 6px 10px;
+    width: 320px;
+    padding: 7px 10px;
     /* 内側の余白調整（任意） */
     box-sizing: border-box;
+    font-size: 20px;
 }
 
 /* 検索ボタン */
@@ -456,9 +468,16 @@ li {
     /* ポインターに */
 }
 
+.search-keyword {
+    font-size: 22px;
+    color: #000000;
+    margin: 0;
+    /* デフォルトの余白消し */
+}
+
 .search-btn img {
-    width: 40px;
-    height: 40px;
+    width: 45px;
+    height: 45px;
     display: block;
     /* 画像の下の隙間を消す */
 }
