@@ -1,7 +1,8 @@
 <x-login-layout>
 <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 
-<div class="search-bar">
+<div class="top-area">
+  <div class="search-bar">
 <form action="{{ route('users.search') }}" method="GET" class="search-form">
   <input
     type="text"
@@ -17,6 +18,8 @@
   <p class="search-keyword">検索ワード：{{ $keyword }}</p>
 @endif
 </div>
+</div>
+
 
 <hr class="custom-hr">
 
@@ -51,5 +54,6 @@
   @empty
     <li>該当するユーザーはいませんでした。</li>
   @endforelse
-</ul>@endif
+</ul>
+@endif
 </x-login-layout>

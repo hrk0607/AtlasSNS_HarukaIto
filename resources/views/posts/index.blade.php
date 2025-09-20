@@ -3,7 +3,7 @@
 
 <form action="{{ route('posts.store') }}" method="POST">
   @csrf
-<div class="post-form-area">
+<div class="top-area">
   <div class="user-icon">
     <img src="{{ asset('images/' . Auth::user()->icon_image) }}" alt="ユーザーアイコン">
   </div>

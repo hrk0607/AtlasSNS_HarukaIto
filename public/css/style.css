@@ -186,14 +186,24 @@ li {
     transform: rotate(50deg);
 }
 
-.post-form-area {
+.top-area {
+    /* max-width: 580px; */
+    /* 横幅を共通に */
+    margin: 20px 100px;
+    /* 上下左右の余白を共通に */
+    /* padding: 0 15px; */
+    /* 中のスタート位置を共通に */
+    display: flex;
+    gap: 15px;
+    align-items: flex-start;
+}
+
+/* .top-area {
     display: flex;
     align-items: flex-start;
-    /* 上揃え */
     gap: 15px;
-    /* アイコンとフォームの余白 */
     margin: 20px 100px;
-}
+} */
 
 .post-form {
     display: flex;
@@ -431,10 +441,7 @@ li {
     grid-auto-flow: column;
     /* 横方向に並べる */
     align-items: center;
-    column-gap: 15px;
-    /* 間のスペース */
-    margin: 40px 60px;
-    /* 上下左右余白 */
+    margin: 25px 0;
 }
 
 /* 検索フォーム全体に余白 */
@@ -471,8 +478,7 @@ li {
 .search-keyword {
     font-size: 22px;
     color: #000000;
-    margin: 0;
-    /* デフォルトの余白消し */
+    margin: 0 0 0 200px;
 }
 
 .search-btn img {
