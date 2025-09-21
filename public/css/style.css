@@ -13,6 +13,8 @@ body {
     align-items: center;
     justify-content: space-between;
     padding: 10px 20px;
+    color: #ffffff;
+    font-size: 18px;
 }
 
 #nav-header h1 img {
@@ -42,11 +44,6 @@ body {
     display: flex;
     align-items: center;
     gap: 20px;
-}
-
-#username {
-    color: #ffffff;
-    font-size: 18px;
 }
 
 li {
@@ -276,9 +273,16 @@ li {
     padding: 8px 0;
 }
 
-.post-date,
+.post-date {
+    font-size: 13px;
+}
+
 .post-text {
     font-size: 13px;
+    white-space: pre-wrap;
+    /* 改行を反映させる */
+    word-wrap: break-word;
+    /* 長い単語も折り返す */
 }
 
 .post-list {

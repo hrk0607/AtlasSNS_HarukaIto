@@ -8,13 +8,13 @@
     <img src="{{ asset('images/' . Auth::user()->icon_image) }}" alt="ユーザーアイコン">
   </div>
   <div class="post-form">
-    <input
-      type="text"
+    <textarea
       name="content"
       class="post-input"
       placeholder="投稿内容を入力してください。"
       maxlength="150"
-    >
+      rows="3"
+    ></textarea>
 @error('content')
     <div class="text-danger small">{{ $message }}</div>
 @enderror

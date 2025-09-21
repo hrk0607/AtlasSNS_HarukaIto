@@ -54,3 +54,6 @@ Route::delete('/posts/{id}', [PostsController::class, 'destroy'])->name('posts.d
 Route::put('/posts/{id}', [PostsController::class, 'update'])->name('posts.update');
 
 Route::get('/search', [UsersController::class, 'search'])->name('users.search');
+
+Route::get('/profile/edit', [ProfileController::class,'edit'])->name('profile.edit');
+Route::put('/profile/update', [ProfileController::class,'update'])->name('profile.update');
