@@ -275,6 +275,11 @@ li {
 
 .post-date {
     font-size: 13px;
+    display: inline-block;
+    /* 幅を持たせる */
+    width: 120px;
+    /* 表示する幅を固定 */
+    text-align: center;
 }
 
 .post-text {
@@ -531,4 +536,33 @@ li {
 /* ユーザー名 */
 .user-name {
     font-size: 1.2rem;
+}
+
+.profile-edit {
+    margin: 50px 200px;
+    display: grid;
+    grid-template-columns: 1fr 3fr 5fr;
+    gap: 1rem;
+}
+
+/* 画像 */
+.profile-col1 img {
+    max-width: 50px;
+    border-radius: 50%;
+}
+
+/* ラベル・インプットの並び */
+.profile-col3 label,
+.profile-col5 input,
+.profile-col5 textarea {
+    display: block;
+    margin-bottom: .75rem;
+}
+
+/* 更新ボタンをグリッドの下に1列使う */
+.update-btn {
+    grid-column: 1 / -1;
+    /* 全カラムに跨る */
+    text-align: center;
+    margin-top: 2rem;
 }
