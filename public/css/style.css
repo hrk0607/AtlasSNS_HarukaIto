@@ -539,30 +539,99 @@ li {
 }
 
 .profile-edit {
-    margin: 50px 200px;
-    display: grid;
-    grid-template-columns: 1fr 3fr 5fr;
-    gap: 1rem;
+    margin: 75px 200px;
 }
 
-/* 画像 */
-.profile-col1 img {
-    max-width: 50px;
+/* 全体を横並び */
+.profile-container {
+    display: grid;
+    grid-template-columns: 1fr 8fr;
+    /* 左アイコン：右フィールド */
+    gap: 2rem;
+}
+
+/* 左カラム：アイコン */
+.profile-icon {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.profile-icon img {
+    max-width: 80px;
     border-radius: 50%;
 }
 
-/* ラベル・インプットの並び */
-.profile-col3 label,
-.profile-col5 input,
-.profile-col5 textarea {
-    display: block;
-    margin-bottom: .75rem;
+/* 右カラム内：ラベル＋入力欄 */
+.profile-fields {
+    width: 100%;
 }
 
-/* 更新ボタンをグリッドの下に1列使う */
+.profile-row {
+    display: grid;
+    grid-template-columns: 3fr 5fr;
+    /* ラベル:入力欄の比率 */
+    gap: 1rem;
+    margin-bottom: 2rem;
+    font-size: 20px;
+}
+
+.profile-row label {
+    display: flex;
+    align-items: center;
+    /* ラベル縦中央揃え */
+}
+
+/* 入力欄の背景色をグレーに */
+.profile-row input,
+.profile-row textarea {
+    width: 100%;
+    background-color: #dcdcdc;
+    /* 薄いグレー */
+    border: 1px solid #000000;
+    padding: .25rem .75rem;
+    border-radius: 0;
+}
+
+.profile-row textarea {
+    resize: none;
+    /* ←右下の斜線消える */
+}
+
+/* ファイル選択部分をボックス化して中央にボタン配置 */
+.icon-upload {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #dcdcdc;
+    border: 1px solid #000000;
+    border-radius: 0;
+    height: 100%;
+    /* 行の高さに合わせる */
+    padding: 1.5rem;
+}
+
+/* 本来のinput[file]は非表示に */
+.icon-upload input[type="file"] {
+    display: none;
+}
+
+/* ラベルをボタン化 */
+.file-btn {
+    background-color: #ffffff;
+    border: 0;
+    color: #c0c0c0;
+    border-radius: 0;
+    /* 角丸なし */
+    padding: .5rem 1rem;
+    cursor: pointer;
+}
+
+.file-btn:hover {
+    background-color: #d5d5d5;
+}
+
 .update-btn {
-    grid-column: 1 / -1;
-    /* 全カラムに跨る */
     text-align: center;
     margin-top: 2rem;
 }

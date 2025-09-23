@@ -31,7 +31,7 @@ class ProfileController extends Controller
                 Rule::unique('users','email')->ignore($user->id)
             ],
             'password' => [
-                'nullable','regex:/^[a-zA-Z0-9]+$/','min:8','max:20','confirmed'
+                'required','regex:/^[a-zA-Z0-9]+$/','min:8','max:20','confirmed'
             ],
             'bio' => ['nullable','string','max:150'],
             'icon_image' => ['nullable','image','mimes:jpg,jpeg,png,bmp,gif,svg'],
@@ -41,11 +41,7 @@ class ProfileController extends Controller
         $user->username = $validated['username'];
         $user->email = $validated['email'];
         $user->bio = $validated['bio'] ?? $user->bio;
-
-        // パスワード変更があれば更新
-        if (!empty($validated['password'])) {
-            $user->password = Hash::make($validated['password']);
-        }
+        $user->password = Hash::make($validated['password']);
 
         // アイコン画像のアップロード
         if ($request->hasFile('icon_image')) {
