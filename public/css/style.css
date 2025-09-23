@@ -635,3 +635,23 @@ li {
     text-align: center;
     margin-top: 2rem;
 }
+
+.follow-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin: 2rem;
+}
+
+.follow-icon img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    cursor: pointer;
+    transition: transform .2s;
+}
+
+.follow-icon img:hover {
+    transform: scale(1.1);
+}

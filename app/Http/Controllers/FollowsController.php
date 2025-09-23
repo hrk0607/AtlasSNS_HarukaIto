@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 
 class FollowsController extends Controller
@@ -35,5 +36,14 @@ class FollowsController extends Controller
         }
 
         return back();
+    }
+
+    public function index()
+    {
+        // 自分がフォローしているユーザー一覧を取得
+        $followings = Auth::user()->followings;
+        // ↑Eloquentのリレーションを使う（Userモデルに定義してあることが前提）
+
+        return view('follows.followList', compact('followings'));
     }
 }
