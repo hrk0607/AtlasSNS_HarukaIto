@@ -35,7 +35,7 @@
         <figure>
           <div class="user-icon">
           <img src="{{ asset('images/' . $value->user->icon_image) }}" alt="{{ $value->user->name ?? 'User' }}">
-</div>
+          </div>
         </figure>
         <div class="post-content">
           <div class="post-header">
@@ -45,21 +45,13 @@
           <div class="post-text">{{ $value->post }}</div>
 
           <!-- {{-- 自分の投稿だけ編集・削除ボタン --}} -->
-@if(Auth::id() === $value->user_id)
-  <div class="post-actions">
-    <button
-      class="js-edit-btn edit-btn"
-      data-id="{{ $value->id }}"
-      data-content="{{ $value->post }}">
-    </button>
-    <!-- {{-- ここを削除フォームからモーダル用ボタンに変更 --}} -->
-    <button
-      type="button"
-      class="js-delete-btn trash-btn"
-      data-id="{{ $value->id }}">
-    </button>
-  </div>
-@endif
+          @if(Auth::id() === $value->user_id)
+            <div class="post-actions">
+              <button class="js-edit-btn edit-btn" data-id="{{ $value->id }}" data-content="{{ $value->post }}"></button>
+              <!-- {{-- ここを削除フォームからモーダル用ボタンに変更 --}} -->
+              <button type="button" class="js-delete-btn trash-btn" data-id="{{ $value->id }}"></button>
+            </div>
+          @endif
         </div>
       </li>
       @if (!$loop->last)

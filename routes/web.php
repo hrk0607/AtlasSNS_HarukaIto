@@ -40,9 +40,6 @@ Route::get('profile', [ProfileController::class, 'profile']);
 
 Route::get('/search', [UsersController::class, 'index'])->name('search');
 
-Route::get('follow-list', [PostsController::class, 'index']);
-Route::get('follower-list', [PostsController::class, 'index']);
-
 Route::post('/users/{user}/follow', [FollowsController::class, 'follow'])->name('users.follow');
 Route::delete('/users/{user}/unfollow', [FollowsController::class, 'unfollow'])->name('users.unfollow');
 
@@ -58,5 +55,8 @@ Route::get('/search', [UsersController::class, 'search'])->name('users.search');
 Route::get('/profile/edit', [ProfileController::class,'edit'])->name('profile.edit');
 Route::put('/profile/update', [ProfileController::class,'update'])->name('profile.update');
 
-Route::get('/followList', [FollowsController::class, 'index'])->name('followList');
+// フォローしているユーザー一覧＆投稿も出したいなら posts メソッドでまとめる
+Route::get('/followlist', [FollowsController::class, 'index'])->name('followlist');
+
+// プロフィールページ
 Route::get('/profile/{id}', [ProfileController::class, 'show'])->name('profile.show');

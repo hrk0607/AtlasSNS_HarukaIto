@@ -42,7 +42,7 @@
 </div>
     </div>
     <div class="text-end mb-3">
-    {{ Form::button('フォローリスト', ['class' => 'btn btn-primary btn-fixed', 'onclick' => "location.href='" . url('followList') . "'"]) }}
+    {{ Form::button('フォローリスト', ['class' => 'btn btn-primary btn-fixed', 'onclick' => "location.href='" . url('followlist') . "'"]) }}
 </div>
 
     <div>

@@ -5,15 +5,16 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
+use App\Models\Post;
 
 class FollowsController extends Controller
 {
     //
-    public function followList(){
-        return view('follows.followList');
+    public function followlist(){
+        return view('follows.followlist');
     }
     public function followerList(){
-        return view('follows.followerList');
+        return view('follows.followerlist');
     }
 
     // ログイン中のユーザーが誰かをフォローする処理
@@ -39,11 +40,21 @@ class FollowsController extends Controller
     }
 
     public function index()
-    {
-        // 自分がフォローしているユーザー一覧を取得
-        $followings = Auth::user()->followings;
-        // ↑Eloquentのリレーションを使う（Userモデルに定義してあることが前提）
+{
+    // 自分がフォローしているユーザー一覧を取得
+    $followings = Auth::user()->followings;
 
-        return view('follows.followList', compact('followings'));
-    }
+    // フォローしているユーザーのIDだけ取得
+    $followingIds = Auth::user()
+        ->followings()
+        ->pluck('followed_id'); // ←カラム名はDBに合わせてね
+
+    // フォローしてる人の投稿だけ取得（自分のは除外）
+    $posts = Post::whereIn('user_id', $followingIds)
+        ->latest()
+        ->get();
+
+    // followings と posts 両方ビューに渡す
+    return view('follows.followList', compact('followings', 'posts'));
+}
 }
