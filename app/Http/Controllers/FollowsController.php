@@ -13,7 +13,7 @@ class FollowsController extends Controller
     public function followlist(){
         return view('follows.followlist');
     }
-    public function followerList(){
+    public function followerlist(){
         return view('follows.followerlist');
     }
 
@@ -39,7 +39,7 @@ class FollowsController extends Controller
         return back();
     }
 
-    public function index()
+    public function follows()
 {
     // 自分がフォローしているユーザー一覧を取得
     $followings = Auth::user()->followings;
@@ -50,11 +50,29 @@ class FollowsController extends Controller
         ->pluck('followed_id'); // ←カラム名はDBに合わせてね
 
     // フォローしてる人の投稿だけ取得（自分のは除外）
-    $posts = Post::whereIn('user_id', $followingIds)
+    $followingPosts = Post::whereIn('user_id', $followingIds)
         ->latest()
         ->get();
 
-    // followings と posts 両方ビューに渡す
-    return view('follows.followList', compact('followings', 'posts'));
+    return view('follows.followList', compact('followings', 'followingPosts'));
+}
+
+    public function followers()
+{
+    // 自分がフォローしているユーザー一覧を取得
+    $followers = Auth::user()->followers;
+
+    // フォローしているユーザーのIDだけ取得
+    $followerIds = Auth::user()
+        ->followers()
+        ->pluck('following_id'); // ←カラム名はDBに合わせてね
+
+    // フォローしてる人の投稿だけ取得（自分のは除外）
+    $followerPosts = Post::whereIn('user_id', $followerIds)
+        ->latest()
+        ->get();
+
+    return view('follows.followerList', compact('followers', 'followerPosts'));
+
 }
 }

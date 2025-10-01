@@ -16,9 +16,8 @@
 
 <hr class="custom-hr">
 
-<div>
   <ul class="post-list">
-    @foreach($posts as $value)
+    @foreach($followingPosts as $value)
       <li class="post-block">
         <figure>
           <div class="user-icon">

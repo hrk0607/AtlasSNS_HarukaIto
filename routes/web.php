@@ -55,8 +55,8 @@ Route::get('/search', [UsersController::class, 'search'])->name('users.search');
 Route::get('/profile/edit', [ProfileController::class,'edit'])->name('profile.edit');
 Route::put('/profile/update', [ProfileController::class,'update'])->name('profile.update');
 
-// フォローしているユーザー一覧＆投稿も出したいなら posts メソッドでまとめる
-Route::get('/followlist', [FollowsController::class, 'index'])->name('followlist');
+Route::get('/followlist', [FollowsController::class, 'follows'])->name('followlist');
+Route::get('/followerlist', [FollowsController::class, 'followers'])->name('followerlist');
 
 // プロフィールページ
 Route::get('/profile/{id}', [ProfileController::class, 'show'])->name('profile.show');
