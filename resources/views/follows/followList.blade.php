@@ -21,7 +21,9 @@
       <li class="post-block">
         <figure>
           <div class="user-icon">
-            <img src="{{ asset('images/' . $value->user->icon_image) }}" alt="{{ $value->user->name ?? 'User' }}">
+            <a href="{{ route('profile.show', $value->user->id) }}" class="follow-icon">
+              <img src="{{ asset('images/' . $value->user->icon_image) }}" alt="{{ $value->user->name ?? 'User' }}">
+            </a>
           </div>
         </figure>
         <div class="post-content">
