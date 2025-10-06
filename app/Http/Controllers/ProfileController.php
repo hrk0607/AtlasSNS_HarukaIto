@@ -10,7 +10,8 @@ use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
 use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\Hash;
-
+use App\Models\User;
+use App\Models\Post;
 
 class ProfileController extends Controller
 {
@@ -53,5 +54,21 @@ class ProfileController extends Controller
         $user->save();
 
         return redirect()->route('posts.index');
+}
+
+// 他人のプロフィール表示
+public function show($id)
+{
+    $user = User::findOrFail($id);
+
+    $userPosts = Post::with('user')
+        ->where('user_id', $user->id)
+        ->latest()
+        ->get();
+
+    return view('profiles.user_profile', [
+        'user' => $user,
+        'userPosts' => $userPosts,
+    ]);
 }
 }
