@@ -195,13 +195,6 @@ li {
     align-items: flex-start;
 }
 
-/* .top-area {
-    display: flex;
-    align-items: flex-start;
-    gap: 15px;
-    margin: 20px 100px;
-} */
-
 .post-form {
     display: flex;
     flex-direction: column;
@@ -662,4 +655,41 @@ li {
 .follow-icon img:hover,
 .follower-icon img:hover {
     transform: scale(1.1);
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 25px;
+    padding: 1rem 0;
+}
+
+.user-details {
+    flex: 1;
+}
+
+.user-info-row {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    align-items: start;
+    gap: 1rem;
+    font-size: 20px;
+}
+
+.user-info-row label {
+    white-space: nowrap;
+    gap: 1rem;
+}
+
+.user-info p {
+    margin: 0;
+    padding-left: 4rem;
+}
+
+.user-action {
+    margin-left: auto;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
 }
