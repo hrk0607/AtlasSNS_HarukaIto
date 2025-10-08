@@ -599,5 +599,8 @@ li {
     margin-left: auto;
     display: flex;
     justify-content: flex-end;
+}
+
+.user-info .user-action {
     align-self: flex-end;
 }
