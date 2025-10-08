@@ -6,7 +6,6 @@ body {
     background-color: #ffffff;
 }
 
-/* header */
 #nav-header {
     background: #186AC9;
     display: flex;
@@ -22,10 +21,9 @@ body {
     height: auto;
     /* 縦横比を維持 */
     display: block;
-    /* 画像下の余白を消すためにおすすめ */
+    /* 画像下の余白を消すため */
 }
 
-/* main content */
 #row {
     display: flex;
     flex-flow: row wrap;
@@ -67,12 +65,11 @@ li {
 
 .user-icon img {
     width: 50px;
-    /* アイコンの大きさ */
     height: 50px;
     border-radius: 50%;
     /* 丸くする */
     object-fit: cover;
-    /* はみ出さないようにトリミング */
+    /* はみ出さないように */
     margin-left: 10px;
     /* 矢印とアイコンの間隔 */
 }
@@ -83,24 +80,19 @@ li {
 
 .menu {
     display: none;
-    /* 初期は非表示 */
     position: absolute;
     /* 下に出したいから絶対配置 */
     top: 56px;
-    /* .menu-btn の下 */
     right: -100px;
     background-color: #ffffff;
-    /* 背景色 */
     padding: 15px 0;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
     z-index: 1000;
     width: 287px;
-    /* XDに合わせて調整 */
     padding: 0;
     margin: 0;
 }
 
-/* メニューの中のリンク */
 .menu li {
     padding: 0px;
     text-align: center;
@@ -108,22 +100,18 @@ li {
     margin: 0;
 }
 
-/* 最後の項目の下線を消す */
 .menu li:last-child {
     border-bottom: none;
 }
 
-/* プロフィール編集の背景だけ紺色 */
 .menu li:nth-child(2) {
     background-color: #123c69;
 }
 
-/* プロフィール編集の文字だけ白 */
 .menu li:nth-child(2) a {
     color: #ffffff;
 }
 
-/* その他リンク */
 .menu li a {
     display: flex;
     color: #727272;
@@ -140,26 +128,21 @@ li {
 .menu-btn {
     position: relative;
     width: 40px;
-    /* 矢印の横幅 */
     height: 40px;
     cursor: pointer;
 }
 
-/* 矢印の線 */
 .menu-btn span {
     display: block;
     position: absolute;
     left: 0;
     width: 50%;
-    /* 矢印の長さを短く */
     height: 2px;
     background-color: #ffffff;
-    /* 白い矢印 */
     border-radius: 3px;
     transition: 0.3s ease;
 }
 
-/* ▼ 初期状態：下向き矢印 */
 .menu-btn span:nth-child(1) {
     top: 17px;
     left: 5px;
@@ -172,7 +155,6 @@ li {
     transform: rotate(-50deg);
 }
 
-/* ▲ 開いた時：上向き矢印 */
 .menu-btn.open span:nth-child(1) {
     top: 17px;
     transform: rotate(-50deg);
@@ -184,12 +166,7 @@ li {
 }
 
 .top-area {
-    /* max-width: 580px; */
-    /* 横幅を共通に */
     margin: 20px 100px;
-    /* 上下左右の余白を共通に */
-    /* padding: 0 15px; */
-    /* 中のスタート位置を共通に */
     display: flex;
     gap: 15px;
     align-items: flex-start;
@@ -198,7 +175,6 @@ li {
 .post-form {
     display: flex;
     flex-direction: column;
-    /* 中にフォームとボタンを縦並び */
     flex-grow: 1;
 }
 
@@ -211,24 +187,19 @@ li {
     font-size: 16px;
     height: 45px;
     margin-bottom: 10px;
-    /* フォームとボタンの間に余白 */
+    resize: none;
 }
 
 .post-bottom {
     display: flex;
     justify-content: flex-end;
-    /* ボタンを右寄せ */
 }
 
 .post-btn {
     border: none;
-    /* 枠線なし */
     outline: none;
-    /* フォーカス時の枠もなし */
     background: none;
-    /* ボタンの背景色なし */
     cursor: pointer;
-    /* マウスカーソルをポインターに */
     margin-right: 50px;
 }
 
@@ -242,16 +213,12 @@ li {
     border: none;
     /* デフォの線消す */
     height: 5px;
-    /* 太さ */
     background-color: #6c7d7d;
-    /* デフォルトっぽいグレー */
     margin: 20px 0;
-    /* 上下余白 */
 }
 
 #side-bar {
     padding: 20px;
-    /* 上下左右ぜんぶ20px */
 }
 
 #side-bar hr {
@@ -269,9 +236,7 @@ li {
 .post-date {
     font-size: 13px;
     display: inline-block;
-    /* 幅を持たせる */
     width: 120px;
-    /* 表示する幅を固定 */
     text-align: center;
 }
 
@@ -280,7 +245,6 @@ li {
     white-space: pre-wrap;
     /* 改行を反映させる */
     word-wrap: break-word;
-    /* 長い単語も折り返す */
 }
 
 .post-list {
@@ -290,33 +254,24 @@ li {
 
 .post-divider {
     border: none;
-    /* デフォルト線を消す */
     border-bottom: 1px solid #6c7d7d;
-    /* 下線を引く */
     margin: 20px -10px 20px -150px;
     /* 投稿と投稿の間隔 */
 }
 
 .post-actions {
     display: flex;
-    /* 横並び（幅は中身に合わせる） */
     justify-content: flex-end;
-    /* 右寄せ */
     gap: 8px;
-    /* ボタン間の隙間 */
     margin-top: 4px;
 }
 
-/* 背景は無し */
-/* 共通（何もなければ非表示） */
 .modal {
     display: none;
 }
 
-/* ---------- 削除モーダル用 ---------- */
 .delete-modal .modal__bg {
     display: none;
-    /* 背景いらない */
 }
 
 .delete-modal__content {
@@ -327,17 +282,13 @@ li {
     background: #fff;
     padding: 20px 20px;
     border: 1px solid #ccc;
-    /* 縁グレー */
     border-radius: 0;
-    /* 角丸なし */
     box-shadow: none;
-    /* 影無し */
     z-index: 1000;
     min-width: 300px;
     width: 500px;
 }
 
-/* ---------- 編集モーダル用 ---------- */
 .edit-modal .modal__bg {
     position: fixed;
     top: 0;
@@ -345,7 +296,6 @@ li {
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.5);
-    /* 半透明黒 */
     z-index: 999;
 }
 
@@ -356,35 +306,27 @@ li {
     transform: translate(-50%, -50%);
     background: #fff;
     padding: 0px 40px;
-    /* 全体余白を増やして大きく見せる */
     border-radius: 8px;
     text-align: center;
     z-index: 1000;
     width: 800px;
-    /* 横幅大きく */
     max-width: 90%;
 }
 
-/* form 内の要素を縦並びにする */
 .edit-modal__content form {
     display: flex;
     flex-direction: column;
-    /* 縦並び */
     align-items: center;
-    /* 中央揃え */
 }
 
-/* 入力欄 */
 .edit-modal__content .modal_post {
     width: 100%;
     height: 200px;
     font-size: 16px;
     margin-bottom: 20px;
-    /* ボタンとの余白 */
     resize: none;
 }
 
-/* 更新ボタンを中央に */
 .edit-submit-btn {
     width: 50px;
     height: 50px;
@@ -392,7 +334,6 @@ li {
     border: none;
     cursor: pointer;
     display: block;
-    /* ブロック要素にする */
     margin-bottom: 20px;
 }
 
@@ -400,18 +341,14 @@ li {
     background: url('/images/edit_h.png') no-repeat center/contain;
 }
 
-/* ボタン配置 */
 .modal__content form {
     display: flex;
     justify-content: flex-end;
-    /* 右寄せ */
     margin-top: 40px;
 }
 
-/* ボタンサイズ統一 */
 .modal__content .btn-modal {
     width: 110px;
-    /* 同じ幅にする */
 }
 
 .edit-btn {
@@ -441,40 +378,29 @@ li {
 .search-bar {
     display: grid;
     grid-auto-flow: column;
-    /* 横方向に並べる */
     align-items: center;
     margin: 25px 0;
 }
 
-/* 検索フォーム全体に余白 */
 .search-form {
     display: flex;
-    /* 入力とボタンを横並び */
     justify-content: flex-start;
-    /* 中央揃え */
     align-items: center;
     gap: 10px;
-    /* 入力とボタンの間の隙間 */
 }
 
 .search-input {
     width: 320px;
     padding: 7px 10px;
-    /* 内側の余白調整（任意） */
     box-sizing: border-box;
     font-size: 20px;
 }
 
-/* 検索ボタン */
 .search-btn {
     background: none;
-    /* 背景なし */
     border: none;
-    /* 枠なし */
     padding: 0;
-    /* 余白なし */
     cursor: pointer;
-    /* ポインターに */
 }
 
 .search-keyword {
@@ -487,30 +413,22 @@ li {
     width: 45px;
     height: 45px;
     display: block;
-    /* 画像の下の隙間を消す */
 }
 
-/* 検索結果リスト全体 */
 .search-results {
     list-style: none;
     padding-left: 0;
     margin: 40px auto;
-    /* 上下左右余白 */
     max-width: 600px;
-    /* 幅の制限 */
 }
 
-/* 各ユーザーの行 */
 .search-results li {
     display: flex;
     justify-content: space-between;
-    /* 左右に分ける */
     align-items: center;
-    /* 縦方向中央揃え */
     padding: 20px 10px;
 }
 
-/* アイコン画像 */
 .user-icon img {
     width: 50px;
     height: 50px;
@@ -518,7 +436,6 @@ li {
     object-fit: cover;
 }
 
-/* ユーザー名 */
 .user-name {
     font-size: 1.2rem;
 }
@@ -527,15 +444,12 @@ li {
     margin: 75px 200px;
 }
 
-/* 全体を横並び */
 .profile-container {
     display: grid;
     grid-template-columns: 1fr 8fr;
-    /* 左アイコン：右フィールド */
     gap: 2rem;
 }
 
-/* 左カラム：アイコン */
 .profile-icon {
     display: flex;
     justify-content: center;
@@ -547,7 +461,6 @@ li {
     border-radius: 50%;
 }
 
-/* 右カラム内：ラベル＋入力欄 */
 .profile-fields {
     width: 100%;
 }
@@ -555,7 +468,6 @@ li {
 .profile-row {
     display: grid;
     grid-template-columns: 3fr 5fr;
-    /* ラベル:入力欄の比率 */
     gap: 1rem;
     margin-bottom: 2rem;
     font-size: 20px;
@@ -564,15 +476,12 @@ li {
 .profile-row label {
     display: flex;
     align-items: center;
-    /* ラベル縦中央揃え */
 }
 
-/* 入力欄の背景色をグレーに */
 .profile-row input,
 .profile-row textarea {
     width: 100%;
     background-color: #dcdcdc;
-    /* 薄いグレー */
     border: 1px solid #000000;
     padding: .25rem .75rem;
     border-radius: 0;
@@ -580,10 +489,9 @@ li {
 
 .profile-row textarea {
     resize: none;
-    /* ←右下の斜線消える */
+    /* 右下の斜線消える */
 }
 
-/* ファイル選択部分をボックス化して中央にボタン配置 */
 .icon-upload {
     display: flex;
     justify-content: center;
@@ -592,7 +500,6 @@ li {
     border: 1px solid #000000;
     border-radius: 0;
     height: 100%;
-    /* 行の高さに合わせる */
     padding: 1.5rem;
 }
 
@@ -601,13 +508,11 @@ li {
     display: none;
 }
 
-/* ラベルをボタン化 */
 .file-btn {
     background-color: #ffffff;
     border: 0;
     color: #c0c0c0;
     border-radius: 0;
-    /* 角丸なし */
     padding: .5rem 1rem;
     cursor: pointer;
 }
@@ -624,9 +529,7 @@ li {
 .list-bar {
     display: flex;
     align-items: center;
-    /* 上下中央揃え */
     gap: 1rem;
-    /* p と follow-list の間隔 */
 }
 
 .list-bar p {
@@ -677,6 +580,11 @@ li {
     font-size: 20px;
 }
 
+.user-info-row+.user-info-row {
+    margin-top: 1rem;
+    /* 2つ目以降のみに上マージン付与 */
+}
+
 .user-info-row label {
     white-space: nowrap;
     gap: 1rem;
@@ -690,6 +598,6 @@ li {
 .user-action {
     margin-left: auto;
     display: flex;
-    align-items: flex-end;
     justify-content: flex-end;
+    align-self: flex-end;
 }

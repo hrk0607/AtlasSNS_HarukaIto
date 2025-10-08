@@ -10,10 +10,12 @@ use App\Models\Post;
 class FollowsController extends Controller
 {
     //
-    public function followlist(){
+    public function followlist()
+    {
         return view('follows.followlist');
     }
-    public function followerlist(){
+    public function followerlist()
+    {
         return view('follows.followerlist');
     }
 
@@ -40,39 +42,38 @@ class FollowsController extends Controller
     }
 
     public function follows()
-{
-    // 自分がフォローしているユーザー一覧を取得
-    $followings = Auth::user()->followings;
+    {
+        // 自分がフォローしているユーザー一覧を取得
+        $followings = Auth::user()->followings;
 
-    // フォローしているユーザーのIDだけ取得
-    $followingIds = Auth::user()
-        ->followings()
-        ->pluck('followed_id'); // ←カラム名はDBに合わせてね
+        // フォローしているユーザーのIDだけ取得
+        $followingIds = Auth::user()
+            ->followings()
+            ->pluck('followed_id');
 
-    // フォローしてる人の投稿だけ取得（自分のは除外）
-    $followingPosts = Post::whereIn('user_id', $followingIds)
-        ->latest()
-        ->get();
+        // フォローしてる人の投稿だけ取得（自分のは除外）
+        $followingPosts = Post::whereIn('user_id', $followingIds)
+            ->latest()
+            ->get();
 
-    return view('follows.followList', compact('followings', 'followingPosts'));
-}
+        return view('follows.followList', compact('followings', 'followingPosts'));
+    }
 
     public function followers()
-{
-    // 自分がフォローしているユーザー一覧を取得
-    $followers = Auth::user()->followers;
+    {
+        // 自分がフォローしているユーザー一覧を取得
+        $followers = Auth::user()->followers;
 
-    // フォローしているユーザーのIDだけ取得
-    $followerIds = Auth::user()
-        ->followers()
-        ->pluck('following_id'); // ←カラム名はDBに合わせてね
+        // フォローしているユーザーのIDだけ取得
+        $followerIds = Auth::user()
+            ->followers()
+            ->pluck('following_id');
 
-    // フォローしてる人の投稿だけ取得（自分のは除外）
-    $followerPosts = Post::whereIn('user_id', $followerIds)
-        ->latest()
-        ->get();
+        // フォローしてる人の投稿だけ取得（自分のは除外）
+        $followerPosts = Post::whereIn('user_id', $followerIds)
+            ->latest()
+            ->get();
 
-    return view('follows.followerList', compact('followers', 'followerPosts'));
-
-}
+        return view('follows.followerList', compact('followers', 'followerPosts'));
+    }
 }
