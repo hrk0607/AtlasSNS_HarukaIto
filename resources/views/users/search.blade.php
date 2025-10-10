@@ -51,7 +51,9 @@
       </div>
     </li>
     @empty
-    <li>該当するユーザーはいませんでした。</li>
+    <div class="no-user-wrapper">
+      <p class="no-user-text">該当するユーザーはいませんでした。</p>
+    </div>
     @endforelse
   </ul>
   @endif

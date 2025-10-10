@@ -65,12 +65,13 @@
         {{ Form::button('ユーザー検索', ['class' => 'btn btn-primary w-75', 'onclick' => "location.href='" . url('search') . "'"]) }}
       </div>
     </div>
-    <footer>
-    </footer>
-    <script src="{{ asset('js/app.js') }}"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="JavaScriptファイルのURL"></script>
-    @stack('scripts')
+  </div>
+  <footer>
+  </footer>
+  <script src="{{ asset('js/app.js') }}"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="JavaScriptファイルのURL"></script>
+  @stack('scripts')
 </body>
 
 </html>
